@@ -81,8 +81,12 @@ nav .middle-nav a {
     margin-right: 32px;
 }
 
+nav .middle-nav a:hover {
+    color: var(--hover_color);
+}
+
 nav .middle-nav a:active {
-    color: var(--main_color);
+    color: var(--clicked_color);
 }
 
 nav a.active {
@@ -270,8 +274,10 @@ nav .right-nav {
 }
 
 .welcome-top-right-pics {
-    width: 499px;
-    height: 704px;
+    width: 100%;
+    height: 85%;
+    max-width: 499px;
+    max-height: 704px;
 }
 
 .welcome-bottom {
@@ -380,6 +386,7 @@ nav .right-nav {
     font-size: 16px;
     line-height: 22px;
     margin: 0;
+    width: 400px;
 }
 
 .cookies_link {
@@ -388,6 +395,7 @@ nav .right-nav {
     line-height: 22px;
     margin: 0;
     margin-bottom: 20px;
+    word-wrap: break-word;
     color: var(--text_color);
 }
 
@@ -595,11 +603,16 @@ nav .right-nav {
 
 /* Welcome Continued */
 .welcome-contd {
-    padding: 104px 181px 50px 181px;
+    /* padding: 104px 181px 50px 181px; */
+    padding: 104px 0px 50px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .welcome-section {
-    width: 100%;
+    width: 60%;
+    min-width: 1076px;
     height: 380px;
     display: flex;
     justify-content: space-between;
@@ -607,9 +620,9 @@ nav .right-nav {
     margin-bottom: 104px;
 }
 
-.welcome-section article {
+/* .welcome-section article {
     width: 47%;
-}
+} */
 
 .welcome-sect-head {
     font-size: 24px;
@@ -622,10 +635,11 @@ nav .right-nav {
     font-weight: 400;
     line-height: 27px;
     color: #3d3d3d;
+    width: 512px;
 }
 
 .welcome-contd-pic {
-    width: 47%;
+    /* width: 47%; */
     display: flex;
 }
 
@@ -1040,8 +1054,14 @@ footer {
 
     .welcome {
         padding: 0px 16px;
-        /* height: auto; */
-        height: calc(100vh - 70px);
+        height: auto;
+    }
+
+    .mobile-welcome {
+        height: calc(100vh - 80px);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
     }
 
     .welcome-top-right {
@@ -1074,12 +1094,17 @@ footer {
 
     .welcome-top-right-pics {
         width: 100%;
-        height: 300px;
+        height: 200px;
     }
 
     .cookies {
-        width: 400px;
-        height: 211px;
+        max-width: 400px;
+        width: 98%;
+        height: auto;
+    }
+
+    .cookies-body {
+        width: auto;
     }
 
     .svg-btn {
@@ -1110,6 +1135,8 @@ footer {
         height: 40px;
         font-size: 16px;
         line-height: 22px;
+        margin-bottom: 10px;
+        margin-top: 10px;
     }
 
     .welcome-bottom-text {
@@ -1169,7 +1196,7 @@ footer {
     }
 
     .welcome-contd {
-        padding: 50px 16px;
+        padding: 50px 0px;
     }
 
     .welcome-contd .three {
@@ -1177,10 +1204,13 @@ footer {
     }
 
     .welcome-section {
+        width: auto;
+        min-width: auto;
         height: auto;
         display: flex;
         flex-direction: column;
-        margin-bottom: 24px;
+        padding: 0px 10px;
+        margin-bottom: 40px;
     }
 
     .welcome-section article {
@@ -1197,6 +1227,8 @@ footer {
         font-size: 16px;
         font-weight: 400;
         line-height: 22px;
+        width: auto;
+        text-align: justify;
     }
 
     .welcome-contd-pic {
@@ -1209,6 +1241,7 @@ footer {
     .welcome-contd-pic img {
         width: 100%;
         max-width: 500px;
+        height: 300px;
     }
 
     .schools {
@@ -1310,7 +1343,15 @@ footer {
 
     .footer-top-header {
         margin-top: 24px;
-        width: 180px;
+    }
+
+    .f1 {
+        width: auto;
+        width: 60%;
+    }
+
+    .f2 {
+        width: 40%;
     }
 
     .footer-top-header h4 {

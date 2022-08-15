@@ -1,14 +1,6 @@
 // Cookies
 
 const cookies_list = [
-    // {
-    //     type: "checkbox",
-    //     label: "Strictly Necessary",
-    //     name: "necessary",
-    //     value: "necessary",
-    //     for: "necessary",
-    //     body: "These cookies are used for activities strictly necessary\nto operate and deliver the service you requested."
-    // },
 
     {
         type: "checkbox",
@@ -48,7 +40,8 @@ const showCookies = () => {
     svg_btn.className = "svg-btn";
     svg_btn.setAttribute("onclick", "removePopup()");
     let svg = document.createElement("img");
-    svg.setAttribute("src", "./img/cookies.svg")
+    svg.setAttribute("src", "{% static 'static/img/cookies.svg' %}")
+    // svg.setAttribute("src", "./img/cookies.svg")
 
     svg_btn.appendChild(svg)
     // svg_back.appendChild(svg_btn)
@@ -66,15 +59,17 @@ const showCookies = () => {
 
     const cookies_body = document.createElement("p");
     cookies_body.className = "cookies-body";
-    cookies_body.innerText = "We use cookies to improve user experince\nChoose what cookies you allow us to use.\nYou can read more about our cookies policy in our";
+    cookies_body.innerText = "We use cookies to improve user experince\nChoose what cookies you allow us to use.\nYou can read more about our cookies policy in our  ";
     // cookies_body.innerHTML = "<a class='cookies_link' href='privacy-policy.html'>Privacy Policy</a>"
-    cookies.appendChild(cookies_body);
+
 
     const cookies_link = document.createElement("a");
     cookies_link.className = "cookies_link";
     cookies_link.innerText = "Privacy Policy";
-    cookies_link.setAttribute("href", "privacy-policy.html")
-    cookies.appendChild(cookies_link);
+    // cookies_link.setAttribute("href", "privacy-policy.html")
+    cookies_link.setAttribute("href", "/privacy-policy")
+    cookies_body.appendChild(cookies_link);
+    cookies.appendChild(cookies_body);
 
     const necessary = document.createElement("div");
     necessary.className = "necessary";
